@@ -1,67 +1,108 @@
-.container{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
-nav{
-    background: #9aaae4;
-    padding: 20px;
-}
-
-nav ul{
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    list-style: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 body{
     margin:0;
     padding:0;
-  }
-  
+}
+
+/* Layout */
+.container{
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    min-height:100vh;
+}
+
+/* Navbar */
+nav{
+    background:#9aaae4;
+    padding:15px;
+}
+
+/* Container da logo + menu */
+.data-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+}
+
+/* Logo */
+.logo{
+    height:150px;
+}
+
+/* Lista */
+nav ul{
+    display:flex;
+    gap:200px;
+
+    list-style:none;
+
+    margin:0;
+    padding:0;
+}
+
+/* Botões */
 .btn{
-  
-  cursor:pointer;
+    width:180px;
+    height:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
     position:relative;
-    padding:10px 20px;
+
     background:white;
-    font-size:28px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    border:none;
+
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
-    transition:all 1s;
-    &:after,&:before{
-      content:" ";
-      width:10px;
-      height:10px;
-      position:absolute;
-      border :0px solid #fff;
-      transition:all 1s;
-      }
-    &:after{
-      top:-1px;
-      left:-1px;
-      border-top:5px solid black;
-      border-left:5px solid black;
-    }
-    &:before{
-      bottom:-1px;
-      right:-1px;
-      border-bottom:5px solid black;
-      border-right:5px solid black;
-    }
-    &:hover{
-      border-top-right-radius:0px;
-    border-bottom-left-radius:0px;
 
-      &:before,&:after{
-        
-        width:100%;
-        height:100%;
-      }
-    }
-  }
+    transition:all 0.5s ease;
+}
+
+/* Cantos */
+.btn::after,
+.btn::before{
+    content:"";
+
+    width:10px;
+    height:10px;
+
+    position:absolute;
+
+    transition:all 0.5s ease;
+}
+
+.btn::after{
+    top:-1px;
+    left:-1px;
+
+    border-top:5px solid black;
+    border-left:5px solid black;
+}
+
+.btn::before{
+    bottom:-1px;
+    right:-1px;
+
+    border-bottom:5px solid black;
+    border-right:5px solid black;
+}
+
+/* Hover */
+.btn:hover{
+    border-top-right-radius:0;
+    border-bottom-left-radius:0;
+}
+
+.btn:hover::before,
+.btn:hover::after{
+    width:100%;
+    height:100%;
+}
